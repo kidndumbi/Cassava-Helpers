@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MyModalComponent } from './my-modal.component';
+import { CasModalService, ModalDATA } from 'cassava-helpers';
 
 describe('MyModalComponent', () => {
   let component: MyModalComponent;
@@ -8,7 +9,8 @@ describe('MyModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MyModalComponent ]
+      declarations: [ MyModalComponent ],
+      providers:[CasModalService, ModalDATA]
     })
     .compileComponents();
   }));

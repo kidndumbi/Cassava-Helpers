@@ -100,12 +100,8 @@ export class ModalCssService {
     container.style.position = 'fixed';
     container.style.top = '10%';
     container.style.left = "50%";
-    //container.style.width = settings.width;
-    //container.style.height = settings.height
     container.style.background = settings.background;
-    //container.style.marginLeft = '-187.5px';
     container.style.textAlign = 'center';
-    //container.style.boxShadow = '0px 0px 2px 1px black';
     container.style.zIndex = '100';
     container.style.display = 'none';
     container.style.borderRadius = settings.roundedEdges === true? '6px': '';
