@@ -154,10 +154,6 @@ export class CasModalService {
     }, 0);
 
 
-
-
-    console.log(this.settings);
-
     if (this.settings.showCloseButton == true) {
       this.createCloseButton(this.container);
       this.setCloseBtnEventListener();

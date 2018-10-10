@@ -19,10 +19,15 @@ export class AppComponent {
   }
 
   openModal() {
-    this.modalDialgRef.open(MyModalComponent, {slice: 'good'}, {
+    
+    let modalref = this.modalDialgRef.open(MyModalComponent, {slice: 'good openeing modal'}, {
       closeOnBackgroundClick:true,
       roundedEdges:false
-  });
+    });
+
+    modalref.onClose().subscribe(data => {
+       console.log(data);
+    });
 
   }
 

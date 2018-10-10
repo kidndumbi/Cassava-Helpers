@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CasModalService } from 'cassava-helpers';
 
 @Component({
   selector: 'app-my-modal',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private casModal: CasModalService) { 
+    console.log(this.casModal.getdata());
+  }
 
   ngOnInit() {
+
+
+  }
+
+  close(){
+    this.casModal.close({dta: 'closing modal'});
   }
 
 }
