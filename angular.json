@@ -121,7 +121,47 @@
           }
         }
       }
+    },
+    "cassava-helpers": {
+      "root": "projects/cassava-helpers",
+      "sourceRoot": "projects/cassava-helpers/src",
+      "projectType": "library",
+      "prefix": "cas",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/cassava-helpers/tsconfig.lib.json",
+            "project": "projects/cassava-helpers/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cassava-helpers/src/test.ts",
+            "tsConfig": "projects/cassava-helpers/tsconfig.spec.json",
+            "karmaConfig": "projects/cassava-helpers/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/cassava-helpers/tsconfig.lib.json",
+              "projects/cassava-helpers/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "cassava-helpers-app"
+  "defaultProject": "cassava-helpers-app",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

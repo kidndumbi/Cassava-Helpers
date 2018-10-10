@@ -16,6 +16,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "cassava-helpers": [
+        "dist/cassava-helpers"
+      ],
+      "cassava-helpers/*": [
+        "dist/cassava-helpers/*"
+      ]
+    }
   }
 }
