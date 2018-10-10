@@ -20,7 +20,8 @@ export class AppComponent {
 
   openModal() {
     this.modalDialgRef.open(MyModalComponent, {slice: 'good'}, {
-      height: '600px'
+      closeOnBackgroundClick:true,
+      roundedEdges:false
   });
 
   }

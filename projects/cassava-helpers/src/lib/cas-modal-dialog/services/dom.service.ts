@@ -1,18 +1,25 @@
-import {Injectable, Injector, ComponentFactoryResolver, EmbeddedViewRef, ApplicationRef } from '@angular/core';
+import {
+  Injectable,
+  Injector,
+  ComponentFactoryResolver,
+  EmbeddedViewRef,
+  ApplicationRef
+} from '@angular/core';
 
-
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class DomService {
 
-  private childComponentRef: any;
+  private childComponentRef:any;
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,
     private injector: Injector
   ) { }
 
-  public appendComponentTo(parentId: string, child: any, childConfig?: ChildConfig) {
-    // Create a component reference from the component
+  public appendComponentTo(parentId: string, child: any, childConfig?: childConfig) {
+    // Create a component reference from the component 
     const childComponentRef = this.componentFactoryResolver
       .resolveComponentFactory(child)
       .create(this.injector);
@@ -39,17 +46,27 @@ export class DomService {
   }
 
 
-  private attachConfig(config, componentRef) {
+  private attachConfig(config, componentRef){
 
-    const data: any = config.data;
-    const settings: object = config.settings;
+    let data: any = config.data;
+    let settings: object = config.settings;
 
     componentRef.instance['data'] = data;
     componentRef.instance['settings'] = settings;
 
+
+    // let inputs = config.inputs;
+    // let outputs = config.outputs;
+    // for(var key in inputs){
+    //   componentRef.instance[key] = inputs[key];
+    // }
+    // for(var key in outputs){
+    //   componentRef.instance[key] = outputs[key];
+    // }
+    
   }
 }
-interface ChildConfig {
-  data: any;
-  settings: object;
+interface childConfig{
+  data:any,
+  settings:object
 }
