@@ -30,7 +30,7 @@ export class CasModalService {
 
     this.body = this.doc.body;
 
-    this.newAnimatedModal();
+    //this.newAnimatedModal();
 
   }
 
