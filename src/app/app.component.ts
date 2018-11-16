@@ -11,6 +11,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'cassava-helpers-app';
 
+  //testing upload
+
 
   constructor(private modalDialgRef: CasModalService) {}
 
@@ -20,14 +22,14 @@ export class AppComponent {
 
   openModal() {
     
-    let modalref = this.modalDialgRef.open(MyModalComponent, {slice: 'good openeing modal'}, {
-      closeOnBackgroundClick:true,
-      roundedEdges:false
-    });
+    // let modalref = this.modalDialgRef.open(MyModalComponent, {slice: 'good openeing modal'}, {
+    //   closeOnBackgroundClick:true,
+    //   roundedEdges:false
+    // });
 
-    modalref.onClose().subscribe(data => {
-       console.log(data);
-    });
+    // modalref.onClose().subscribe(data => {
+    //    console.log(data);
+    // });
 
   }
 
